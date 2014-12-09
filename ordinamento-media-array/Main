@@ -1,0 +1,62 @@
+/*==============================================================================
+Autore      : Andrea Capone		Matricola: N86001676
+Programma   : Media elementi pari di un Array di int
+Data        : 02/12/2014
+
+Da Fare:
+Ordinare un array in modo crescente e preso un elemento dell'array
+di n, calcolare la media aritmetica degli elementi pari dell'array
+considerandolo dal primo elemento fino a quello scelto.
+
+------------------------------------------------------------------------------*/
+#include<stdio.h>
+#include<math.h>
+#include<conio.h>
+
+void OrdinamentoArray(int array[], int n); // funzione ordinamento
+float MediaArrayElementoScelto(int array[], int k, float media); // media aritmetica
+
+int main ()
+{
+    // variabili:
+
+    int n, // dimensione array
+        k, // dimensione array fino all'elemento di cui si vuole la media
+        i;
+    int array[100];
+    float media = 0; // variabile in cui inserisco il valore della media
+
+    // caricamento dell'array:
+
+    do
+    {
+        printf("inserisci la dimensione dell' array: (Max 100)\n");
+        scanf("%d", &n);
+    }while ((n<1)||(n>100));
+
+    for(i=0; i<n; i++)
+    {
+        printf("inserisci l' elemento dell' array %d \n", i);
+        scanf("%d", &array[i]);
+    }
+    OrdinamentoArray(array, n);
+
+    // stampa array:
+
+    printf("elementi dell'array ordinato:\n");
+    for(i=0; i<n; i++)
+    {
+        printf("elemento [%d] %d\n", i+1, array[i]);
+    }
+
+    do
+    {
+        printf("\ndimmi fino a quale elemento vuoi calcolare la media\n");
+        scanf("%d", &k);
+    }while ((k<1)||(k>n));
+    media=MediaArrayElementoScelto(array, k, media);
+    printf("media:  %f", media);
+    printf("\n premi invio per continuare");
+    _getch();
+    return(0);
+}
