@@ -1,0 +1,28 @@
+ // funzione della media aritmetica degli elementi pari:
+
+float MediaArrayElementoScelto(int array[], int k, float media)
+{
+    // dichiaro le variabili:
+    int i = 0,
+        TotM = 0; // il numero totale di elementi pari di cui voglio calcolare la media
+    float somma = 0;
+
+    // calcolo la media degli elementi pari:
+
+    while (i<k)
+    {
+        if(array[i]%2 == 0)
+        {
+            somma=somma+array[i];
+            TotM++;
+        }
+        i++;
+    }
+
+/*NB: è ovvio che se i numeri di cui voglio la media sono tutti dispari il programma fornirà la media come Not
+      A Number perchè il calcolatore sta dividendo per zero non essendoci numeri pari
+*/
+
+        media=(somma/TotM);
+        return(media);
+    }
