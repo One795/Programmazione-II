@@ -1,0 +1,60 @@
+float MediaArrayElementoScelto(int array[], int k, float media)
+{
+    // dichiaro le variabili:
+    int i = 0,
+        scelta,
+        TotM = 0; // il numero totale di elementi pari di cui voglio calcolare la media
+    float somma = 0;
+    do
+        {
+            printf("\n1: calcola la media di tutti gli elementi dell'array\n");
+            printf("\n2: calcola la media degli elementi pari dell'array\n");
+            printf("\n3: calcola la media degli elementi dispari dell'array\n");
+            scanf("%d", &scelta);
+        }while((scelta < 1) || (scelta > 3));
+
+    // calcolo la media di tutti gli elementi fino a k se l'utente preme 1
+
+    if (scelta == 1)
+    {
+        for (i=0; i<k; i++)
+        {
+            somma=somma+array[i];
+        }
+        media=somma/k;
+    }
+
+    // calcolo la media di tutti gli elementi pari se l'utente preme 2
+
+    else if(scelta == 2)
+    {
+        while (i<k)
+        {
+            if(array[i]%2 == 0)
+            {
+                somma=somma+array[i];
+                TotM++;
+            }
+        i++;
+        }
+    media=(somma/TotM); // NB: se TotM = 0 ovviamente il risultato di media sarà Not A Number (NAN)
+    }
+
+    // calcolo la media di tutti gli elementi dispari se l'utente preme 3
+
+    else
+    {
+         while (i<k)
+        {
+            if(array[i]%2 != 0)
+            {
+                somma=somma+array[i];
+                TotM++;
+            }
+        i++;
+        }
+    media=(somma/TotM); // stesso discorso dei numeri pari per quanto riguarda TotM se è 0
+    }
+
+    return(media);
+}
