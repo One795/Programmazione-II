@@ -21,9 +21,9 @@ float MediaArrayElementoScelto(int array[], int k, float media)
         {
             somma=somma+array[i];
         }
-        media=somma/k;
+        media=somma/k; 
     }
-
+ 
     // calcolo la media di tutti gli elementi pari se l'utente preme 2
 
     else if(scelta == 2)
