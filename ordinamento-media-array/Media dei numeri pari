@@ -1,11 +1,12 @@
  // funzione della media aritmetica degli elementi pari:
 
-float MediaArrayElementoScelto(int array[], int k, float media)
+float MediaArrayElementoScelto(int array[], int k)
 {
     // dichiaro le variabili:
     int i = 0,
         TotM = 0; // il numero totale di elementi pari di cui voglio calcolare la media
-    float somma = 0;
+    float somma = 0,
+          media = 0;
 
     // calcolo la media degli elementi pari:
 
