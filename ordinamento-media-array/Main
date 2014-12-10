@@ -14,7 +14,7 @@ considerandolo dal primo elemento fino a quello scelto.
 #include<conio.h>
 
 void OrdinamentoArray(int array[], int n); // funzione ordinamento
-float MediaArrayElementoScelto(int array[], int k, float media); // media aritmetica
+float MediaArrayElementoScelto(int array[], int k); // media aritmetica
 
 int main ()
 {
@@ -54,7 +54,7 @@ int main ()
         printf("\ndimmi fino a quale elemento vuoi calcolare la media\n");
         scanf("%d", &k);
     }while ((k<1)||(k>n));
-    media=MediaArrayElementoScelto(array, k, media);
+    media=MediaArrayElementoScelto(array, k);
     printf("media:  %f", media);
     printf("\n premi invio per continuare");
     _getch();
